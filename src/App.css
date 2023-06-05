@@ -24,11 +24,110 @@ body {
 
 a,
 a:visited {
-  color: #00d8ff
+  color: #00d8ff;
 }
 
-nav > ul {
+.nav-container {
+  background-color: #085f3d;
+  padding: 1px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #217654, #123c37);
+}
+
+.nav-menu {
+  list-style: none;
   margin: 0;
-  padding: 16px 32px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
+.nav-item {
+  display: inline-block;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-icon {
+  display: inline-block;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sub-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  white-space: nowrap;
+  overflow: auto;
+  background: linear-gradient(to right, #217654, #123c37);
+  background-color: #085f3d;
+  padding: 10px;
+  border: 1px solid #104833;
+  border-top: none;
+  display: none;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown.expanded .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dropdown-link {
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  padding: 8px 10px;
+}
+
+.dropdown-link:hover {
+  background-color: #104833;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 10px;
+}
+
+.nav-item a.active {
+  color: #fff;
+  background-color: #333;
+}
+
+.nav-item a:hover {
+  background-color: #104833;
+}
+
+.nav-logo {
+  width: 50px;
+  height: auto;
+  filter: invert(55%) sepia(93%) saturate(393%) hue-rotate(92deg)
+    brightness(99%) contrast(89%);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.user-welcome {
+  margin-left: 10px;
+  color: #fff;
+}

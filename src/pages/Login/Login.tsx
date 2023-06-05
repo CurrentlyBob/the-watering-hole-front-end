@@ -51,7 +51,7 @@ const LoginPage = (props: AuthPageProps): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      <h1>Log In</h1>
+      <h1 className={styles.title}>Log In</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
@@ -61,6 +61,7 @@ const LoginPage = (props: AuthPageProps): JSX.Element => {
             value={email}
             name="email"
             onChange={handleChange}
+            className={styles.input}
           />
         </label>
         <label className={styles.label}>
@@ -70,6 +71,7 @@ const LoginPage = (props: AuthPageProps): JSX.Element => {
             value={password}
             name="password"
             onChange={handleChange}
+            className={styles.input}
           />
         </label>
         <div>
