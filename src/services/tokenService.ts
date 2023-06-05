@@ -15,14 +15,14 @@ function setToken(token: string): void {
 function getToken(): string | null {
   let token = localStorage.getItem('token')
   if (!token) return null
-  
+
   const payload: Payload = jwt_decode(token)
-  
+
   if (payload.exp && payload.exp < Date.now() / 1000) {
     localStorage.removeItem('token')
     token = null
   }
-  
+
   return token
 }
 

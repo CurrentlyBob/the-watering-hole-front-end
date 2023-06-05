@@ -27,7 +27,7 @@ const Signup = (props: AuthPageProps): JSX.Element => {
     passwordConf: '',
   })
   const [photoData, setPhotoData] = useState<PhotoFormData>({
-    photo: null
+    photo: null,
   })
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,24 +39,24 @@ const Signup = (props: AuthPageProps): JSX.Element => {
     if (!evt.target.files) return
     const file = evt.target.files[0]
     let isFileInvalid = false
-    let errMsg = ""
+    let errMsg = ''
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
     // cloudinary supports files up to 10.4MB each as of May 2023
     if (file.size >= 10485760) {
-      errMsg = "Image must be smaller than 10.4MB"
+      errMsg = 'Image must be smaller than 10.4MB'
       isFileInvalid = true
     }
     if (photoFormat && !validFormats.includes(photoFormat)) {
-      errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+      errMsg = 'Image must be in gif, jpeg/jpg, png, svg, or webp format'
       isFileInvalid = true
     }
-    
+
     setMessage(errMsg)
-    
+
     if (isFileInvalid && imgInputRef.current) {
-      imgInputRef.current.value = ""
+      imgInputRef.current.value = ''
       return
     }
 
@@ -97,46 +97,23 @@ const Signup = (props: AuthPageProps): JSX.Element => {
         </label>
         <label className={styles.label}>
           Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
+          <input type="text" value={email} name="email" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
+          <input type="password" value={password} name="password" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Confirm Password
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
+          <input type="password" value={passwordConf} name="passwordConf" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Upload Photo
-          <input 
-            type="file" 
-            name="photo" 
-            onChange={handleChangePhoto}
-            ref={imgInputRef}
-          />
+          <input type="file" name="photo" onChange={handleChangePhoto} ref={imgInputRef} />
         </label>
         <div>
           <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
-            disabled={ isFormInvalid() || isSubmitted }
-          >
+          <button className={styles.button} disabled={isFormInvalid() || isSubmitted}>
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
         </div>

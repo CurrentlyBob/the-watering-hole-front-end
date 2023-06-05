@@ -117,8 +117,7 @@ a:visited {
 .nav-logo {
   width: 50px;
   height: auto;
-  filter: invert(55%) sepia(93%) saturate(393%) hue-rotate(92deg)
-    brightness(99%) contrast(89%);
+  filter: invert(55%) sepia(93%) saturate(393%) hue-rotate(92deg) brightness(99%) contrast(89%);
 }
 
 .logo-container {

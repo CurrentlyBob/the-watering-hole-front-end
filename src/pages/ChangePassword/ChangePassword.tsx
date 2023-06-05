@@ -13,7 +13,6 @@ import { AuthPageProps } from '../../types/props'
 import { ChangePasswordFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
 
-
 const ChangePassword = (props: AuthPageProps): JSX.Element => {
   const { handleAuthEvt } = props
   const navigate = useNavigate()
@@ -55,30 +54,15 @@ const ChangePassword = (props: AuthPageProps): JSX.Element => {
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           Current Password
-          <input
-            type="password"
-            value={curPassword}
-            name="curPassword"
-            onChange={handleChange}
-          />
+          <input type="password" value={curPassword} name="curPassword" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           New Password
-          <input
-            type="password"
-            value={newPassword}
-            name="newPassword"
-            onChange={handleChange}
-          />
+          <input type="password" value={newPassword} name="newPassword" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Confirm New Password
-          <input
-            type="password"
-            value={newPasswordConf}
-            name="newPasswordConf"
-            onChange={handleChange}
-          />
+          <input type="password" value={newPasswordConf} name="newPasswordConf" onChange={handleChange} />
         </label>
         <div>
           <Link to="/">Cancel</Link>

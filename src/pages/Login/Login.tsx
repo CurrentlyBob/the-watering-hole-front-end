@@ -56,23 +56,11 @@ const LoginPage = (props: AuthPageProps): JSX.Element => {
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-            className={styles.input}
-          />
+          <input type="text" value={email} name="email" onChange={handleChange} className={styles.input} />
         </label>
         <label className={styles.label}>
           Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-            className={styles.input}
-          />
+          <input type="password" value={password} name="password" onChange={handleChange} className={styles.input} />
         </label>
         <div>
           <Link to="/">Cancel</Link>
