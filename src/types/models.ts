@@ -1,4 +1,20 @@
-/* ---------===== custom props ====--------- */
+/* ---------===== custom models ====--------- */
+
+export interface PlantAttributes {
+  plantApiId: string;
+  nickname: string;
+  scientific: string[];
+  watering: string;
+  sunlight: string[];
+  image: string;
+  plantAmount: number;
+  notes?: string | null;
+  isFertilized: boolean;
+  plantLocation?: string | null;
+  profileId: number;
+  createdAt: string;
+  updatedAt: string;
+}
 
 /* ---------===== auth models =====--------- */
 
@@ -18,3 +34,5 @@ export interface User {
   createdAt: string
   updatedAt: string
 }
+
+

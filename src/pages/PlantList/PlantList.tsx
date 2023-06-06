@@ -16,7 +16,7 @@ const PlantList: React.FC = () => {
     useEffect(() => {
         const fetchPlants = async () => {
             try {
-                const res = await axios.get(`https://perenual.com/api/species-list?key=sk-VpYZ647e3114a80431145&page=${currentPage}`
+                const res = await axios.get(`https://perenual.com/api/species-list?key=sk-NMIj647e5519e4a3a1163&page=${currentPage}`
                 )
                 const data = res.data
                 const transformedData = data.data.map((plant: any) => {
@@ -72,4 +72,3 @@ const PlantList: React.FC = () => {
 }
  
 export default PlantList;
-

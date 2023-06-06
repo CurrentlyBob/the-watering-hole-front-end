@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PlantList from './pages/PlantList/PlantList'
+import GardenList from './pages/Garden/GardenList'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -42,7 +43,8 @@ function App(): JSX.Element {
         <Route path="/" element={<Landing user={user} />} />
         <Route path="/auth/signup" element={<Signup handleAuthEvt={handleAuthEvt} />} />
         <Route path="/auth/login" element={<Login handleAuthEvt={handleAuthEvt} />} />
-        <Route path="/api/plants" element={<PlantList />} />
+        <Route path="/api/plantlist" element={<ProtectedRoute user={user}><PlantList /></ProtectedRoute>} />
+        <Route path="/api/garden" element={<ProtectedRoute user={user}><GardenList /> </ProtectedRoute>} />
         <Route
           path="/auth/change-password"
           element={

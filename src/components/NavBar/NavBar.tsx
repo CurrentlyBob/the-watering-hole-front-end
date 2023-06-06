@@ -33,11 +33,13 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <img src={logo} alt="logo" className="nav-logo" />
         </NavLink>
         {user && <div className="user-welcome">Welcome, {user.name}</div>}
+        {user && <li className='nav-item'><NavLink to="/api/plantlist" className={() => (isActive('/api/plantlist') ? 'active' : '')}>All Plants</NavLink></li> }
+        {user && <li className='nav-item'><NavLink to="/api/garden" className={() => (isActive('/api/garden') ? 'active' : '')}>Your Garden</NavLink></li> }
       </div>
       <ul className="nav-menu">
         {user ? (
           <>
-          <li><NavLink to="/api/plants">All Plants</NavLink></li>
+          
             <li className={`nav-item dropdown ${expanded ? 'expanded' : ''}`} onClick={handleToggle}>
               <div className="nav-icon">☰</div>
               {expanded && (
