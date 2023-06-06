@@ -1,6 +1,3 @@
-// css
-import styles from './Landing.module.css'
-
 // types
 import { User } from '../../types/models'
 
@@ -12,9 +9,9 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-    </main>
+    <div>
+      <p className="text-2xl">Hello, {user ? user.name : 'friend'}</p>
+    </div>
   )
 }
 

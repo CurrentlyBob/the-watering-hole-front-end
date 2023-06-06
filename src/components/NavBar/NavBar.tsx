@@ -27,55 +27,71 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   }
 
   return (
-    <nav className="nav-container">
-      <div className="logo-container">
+    <nav className="flex items-center justify-between bg-green-500 p-3 w-full ">
+      <div className="flex items-center">
         <NavLink to="/">
-          <img src={logo} alt="logo" className="nav-logo" />
+          <img src={logo} alt="logo" className="w-16 h-16 mr-2" />
         </NavLink>
-        {user && <div className="user-welcome">Welcome, {user.name}</div>}
-        {user && <li className='nav-item'><NavLink to="/api/plantlist" className={() => (isActive('/api/plantlist') ? 'active' : '')}>All Plants</NavLink></li> }
-        {user && <li className='nav-item'><NavLink to="/api/garden" className={() => (isActive('/api/garden') ? 'active' : '')}>Your Garden</NavLink></li> }
+        {user && <div className="text-white">Welcome, {user.name}</div>}
       </div>
-      <ul className="nav-menu">
-        {user ? (
+      <div className="flex items-center">
+        {user && (
           <>
-          
-            <li className={`nav-item dropdown ${expanded ? 'expanded' : ''}`} onClick={handleToggle}>
-              <div className="nav-icon">☰</div>
+            <NavLink
+              to="/api/plantlist"
+              className={`px-4 py-2 rounded text-white ${isActive('/api/plantlist') ? 'bg-green-700' : ''}`}
+            >
+              All Plants
+            </NavLink>
+            <NavLink
+              to="/api/garden"
+              className={`px-4 py-2 rounded text-white ${isActive('/api/garden') ? 'bg-green-700' : ''}`}
+            >
+              Your Garden
+            </NavLink>
+            <div className={`relative ${expanded ? 'group' : ''}`} onClick={handleToggle}>
+              <div className="px-4 py-2 cursor-pointer text-white">☰</div>
               {expanded && (
-                <ul className="sub-menu">
-                  <li className="nav-item">
-                    <NavLink to="" className="dropdown-link" onClick={handleLogout}>
+                <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <NavLink
+                      to=""
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={handleLogout}
+                    >
                       Log Out
                     </NavLink>
-                  </li>
-                  <li className="nav-item">
                     <NavLink
                       to="/auth/change-password"
-                      className={`dropdown-link ${isActive('/auth/change-password') ? 'active' : ''}`}
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${
+                        isActive('/auth/change-password') ? 'bg-gray-200' : ''
+                      }`}
                     >
                       Change Password
                     </NavLink>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               )}
-            </li>
-          </>
-        ) : (
-          <>
-            <li className="nav-item">
-              <NavLink to="/auth/login" className={() => (isActive('/auth/login') ? 'active' : '')}>
-                Log In
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/auth/signup" className={() => (isActive('/auth/signup') ? 'active' : '')}>
-                Sign Up
-              </NavLink>
-            </li>
+            </div>
           </>
         )}
-      </ul>
+        {!user && (
+          <>
+            <NavLink
+              to="/auth/login"
+              className={`px-4 py-2 rounded text-white ${isActive('/auth/login') ? 'bg-green-700' : ''}`}
+            >
+              Log In
+            </NavLink>
+            <NavLink
+              to="/auth/signup"
+              className={`px-4 py-2 rounded text-white ${isActive('/auth/signup') ? 'bg-green-700' : ''}`}
+            >
+              Sign Up
+            </NavLink>
+          </>
+        )}
+      </div>
     </nav>
   )
 }
