@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllPlants } from '../../services/plantApiService'
+import { getAllPlants } from '../../services/plantService'
 import { PlantApiItem } from '../../types/models'
 
 const PlantList: React.FC = () => {

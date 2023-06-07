@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent, useRef } from 'react'
 import { AddPlantFormData } from '../../types/forms'
-import { addPlant, searchPlants } from '../../services/plantApiService'
+import { addPlant, searchPlants } from '../../services/plantService'
 import { FormSubmitData, PlantApiItem, PlantAttributes } from '../../types/models'
 import axios from 'axios'
 import { getUser } from '../../services/authService'

@@ -42,3 +42,18 @@ export async function addPlant(plant: FormSubmitData) {
     tokenService.setToken(json.token)
   }
 }
+
+export async function deletePlant(plantId: number) {
+  try {
+    const res = await fetch(`${BASE_URL}/${plantId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${tokenService.getToken()}` 
+    },
+    })
+    const json = await res.json()
+    if (json.err) throw new Error(json.err)
+    return json
+  } catch (error) {
+    throw new Error('Failed to delete Plants')
+  }
+}
