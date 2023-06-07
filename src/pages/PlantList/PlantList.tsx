@@ -1,34 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-
-interface PlantListData {
-  nickname: string
-  scientific: string[]
-  imgUrl: string
-}
+import { getAllPlants } from '../../services/plantApiService'
+import { PlantApiItem } from '../../types/models'
 
 const PlantList: React.FC = () => {
-  const [plants, setPlants] = useState<PlantListData[]>([])
+  const [plants, setPlants] = useState<PlantApiItem[]>([])
   const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     const fetchPlants = async () => {
-      try {
-        const res = await axios.get(
-          `https://perenual.com/api/species-list?key=sk-NMIj647e5519e4a3a1163&page=${currentPage}`,
-        )
-        const data = res.data
-        const transformedData = data.data.map((plant: any) => {
-          return {
-            nickname: plant.common_name,
-            scientific: plant.scientific_name,
-            imgUrl: plant.default_image.medium_url,
-          }
-        })
-        setPlants(transformedData)
-      } catch (error) {
-        console.log('Fetch Error', error)
-      }
+      const plantsData = await getAllPlants(currentPage)
+      
+      setPlants(plantsData)
     }
 
     fetchPlants()
@@ -45,12 +27,15 @@ const PlantList: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-4">
       <h1 className="text-3xl mb-2">Plant List:</h1>
-      <div className="grid grid-cols-5 gap-4 overflow-auto mb-5 bg-green-900 p-3 rounded-lg shadow-lg" style={{ maxHeight: '70vh' }}>
+      <div
+        className="grid sm:grid-cols-2 md:grid-cols-5 gap-4 overflow-auto mb-5 bg-green-900 p-3 rounded-lg shadow-lg"
+        style={{ maxHeight: '70vh' }}
+      >
         {plants.map((plant, index) => (
           <div key={index} className="flex flex-col items-center bg-green-700 p-4 rounded-md">
-            <img className="w-1/2 h-auto mb-4 rounded-md shadow-lg" src={plant.imgUrl} alt={plant.nickname} />
-            <p className="mb-2 font-semibold">{plant.nickname}</p>
-            <p className="text-sm text-gray-200">{plant.scientific.join(', ')}</p>
+            <img className="w-1/2 h-auto mb-4 rounded-md shadow-lg" src={plant.default_image.original_url} alt={plant.common_name} />
+            <p className="mb-2 font-semibold">{plant.common_name}</p>
+            <p className="text-sm text-gray-200">{plant?.scientific_name?.join(', ')}</p>
           </div>
         ))}
       </div>

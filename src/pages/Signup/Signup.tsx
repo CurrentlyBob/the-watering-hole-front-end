@@ -87,33 +87,68 @@ const Signup = (props: AuthPageProps): JSX.Element => {
   }
 
   return (
-    <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
-          <input type="text" value={email} name="email" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input type="password" value={password} name="password" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
-          <input type="password" value={passwordConf} name="passwordConf" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
-          <input type="file" name="photo" onChange={handleChangePhoto} ref={imgInputRef} />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
-          <button className={styles.button} disabled={isFormInvalid() || isSubmitted}>
+    <main className="flex flex-col items-center justify-center h-screen bg-gray-800 p-4">
+      <h1 className="text-4xl text-green-500 mb-5">Sign Up</h1>
+      <p className="text-lg text-red-600 mb-4">{message}</p>
+      <form autoComplete="off" onSubmit={handleSubmit} className="flex flex-col w-full max-w-md ">
+        <div className="flex flex-col items-center mb-2">
+          <label className="text-white">Name</label>
+          <input
+            type="text"
+            value={name}
+            name="name"
+            onChange={handleChange}
+            className="bg-gray-700 text-white p-2 rounded w-2/3"
+          />
+        </div>
+        <div className="flex flex-col items-center mb-2">
+          <label className="text-white">Email</label>
+          <input
+            type="text"
+            value={email}
+            name="email"
+            onChange={handleChange}
+            className="bg-gray-700 text-white p-2 rounded w-2/3"
+          />
+        </div>
+        <div className="flex flex-col items-center mb-2">
+          <label className="text-white">Password</label>
+          <input
+            type="password"
+            value={password}
+            name="password"
+            onChange={handleChange}
+            className="bg-gray-700 text-white p-2 rounded w-2/3"
+          />
+        </div>
+        <div className="flex flex-col items-center mb-2">
+          <label className="text-white">Confirm Password</label>
+          <input
+            type="password"
+            value={passwordConf}
+            name="passwordConf"
+            onChange={handleChange}
+            className="bg-gray-700 text-white p-2 rounded w-2/3"
+          />
+        </div>
+        <div className="flex flex-col items-center mb-2">
+          <label className="text-white">Upload Photo</label>
+          <input
+            type="file"
+            name="photo"
+            onChange={handleChangePhoto}
+            ref={imgInputRef}
+            className="bg-gray-700 text-white p-2 rounded w-2/3"
+          />
+        </div>
+        <div className="flex flex-col items-center items-center mt-4">
+          <Link to="/" className="text-green-500 hover:text-green-300">
+            Cancel
+          </Link>
+          <button
+            className="btn px-4 py-2 rounded bg-green-500 text-white disabled:opacity-50"
+            disabled={isFormInvalid() || isSubmitted}
+          >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
         </div>
