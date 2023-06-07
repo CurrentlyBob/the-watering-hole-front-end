@@ -26,11 +26,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a,
-a:visited {
-  color: #00d8ff;
-}
-
 .nav-container {
   background-color: #085f3d;
   padding: 1px 10px;
