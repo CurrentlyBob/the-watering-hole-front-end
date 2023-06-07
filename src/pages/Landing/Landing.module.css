@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: url('../../assets/icons/rays.svg');
+  background-image: url('../../assets/icons/rays.svg');
   background-position: center center;
   background-size: cover;
+  background-color: #22c55e;
 }
 
 .container > h1 {
