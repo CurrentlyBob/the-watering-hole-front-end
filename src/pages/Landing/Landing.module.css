@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url('../../assets/icons/rays.svg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.container > h1 {
+  color: black;
+  cursor: default;
+  padding: 0 16px;
+  margin: 44px 0 36px;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 90px;
+  text-align: center;
+  font-family: sofia-pro-soft, sans-serif;
+  text-shadow: 2px 2px 0 var(--outline), 2px -2px 0 var(--outline), -2px 2px 0 var(--outline),
+    -2px -2px 0 var(--outline), 2px 0px 0 var(--outline), 0px 2px 0 var(--outline), -2px 0px 0 var(--outline),
+    0px -2px 0 var(--outline), 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container img {
+  width: 320px;
+  margin: 0px 0px 256px;
+}
+
+.container button {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 5px;
+  text-align: center;
+  background: black;
+  border: 2px solid white;
+  padding: 10px 24px 10px 24px;
+  margin: -50px 0 25px;
+  box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
+}
+body {
+  margin: 0;
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sofia-pro, sans-serif;
+  --primary: #f2b138;
+  --secondary: #6574d0;
+  --outline: #ffffff;
+  --background: #f2f4f8;
+  --border: rgb(220, 220, 220);
+  --card-background: rgb(255, 255, 255);
+}
+._container_1nlmg_1 img {
+  width: 320px;
+  margin: 0 0 256px;
+}
