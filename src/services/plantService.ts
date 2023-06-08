@@ -73,7 +73,6 @@ export async function updatePlant(updatedPlant: GardenPlant) {
       tokenService.removeToken()
       tokenService.setToken(json.token)
     }
-
   } catch (error) {
     console.error(error)
   }

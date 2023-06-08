@@ -30,12 +30,10 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
       ...prevState,
       [name]: value,
     }))
-
   }
 
   useEffect(() => {
     setUpdatedPlant(plant)
-
   }, [plant])
 
   return (

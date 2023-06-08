@@ -1,6 +1,5 @@
 /* ---------===== custom models ====--------- */
 
-
 export interface PlantAttributes {
   id: number
   plantApiId: number
@@ -17,7 +16,6 @@ export interface PlantAttributes {
   common_name: string
   updatedAt: string
 }
-
 
 export interface PlantApiItem {
   common_name: string

@@ -23,7 +23,7 @@ async function signup(signupFormData: SignupFormData, photoData: PhotoFormData):
 
     if (photoData.photo) {
       await addProfilePhoto(photoData)
-    } 
+    }
   }
 }
 

@@ -9,7 +9,7 @@ const PlantList: React.FC = () => {
   useEffect(() => {
     const fetchPlants = async () => {
       const plantsData = await getAllPlants(currentPage)
-      
+
       setPlants(plantsData)
     }
 
@@ -33,7 +33,11 @@ const PlantList: React.FC = () => {
       >
         {plants.map((plant, index) => (
           <div key={index} className="flex flex-col items-center bg-green-700 p-4 rounded-md">
-            <img className="w-1/2 h-auto mb-4 rounded-md shadow-lg" src={plant.default_image.original_url} alt={plant.common_name} />
+            <img
+              className="w-1/2 h-auto mb-4 rounded-md shadow-lg"
+              src={plant.default_image.original_url}
+              alt={plant.common_name}
+            />
             <p className="mb-2 font-semibold">{plant.common_name}</p>
             <p className="text-sm text-gray-200">{plant?.scientific_name}</p>
           </div>
