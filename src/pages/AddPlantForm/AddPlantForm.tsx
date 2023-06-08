@@ -1,8 +1,8 @@
-import { useState, ChangeEvent, FormEvent, useRef } from 'react'
-import { AddPlantFormData } from '../../types/forms'
+import { useState, ChangeEvent, FormEvent } from 'react'
+
 import { addPlant, searchPlants } from '../../services/plantService'
-import { FormSubmitData, PlantApiItem, PlantAttributes } from '../../types/models'
-import axios from 'axios'
+import { FormSubmitData, PlantApiItem } from '../../types/models'
+
 import { getUser } from '../../services/authService'
 
 interface FormData {
@@ -35,7 +35,7 @@ function AddPlantForm() {
     profileId: 0,
   })
 
-  const timerId = useRef<any>(null)
+
 
   const handleSearch = async (query: string) => {
     try {
@@ -44,16 +44,6 @@ function AddPlantForm() {
     } catch (error) {
       console.log(error)
     }
-  }
-
-  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value
-
-    if (timerId.current) {
-      clearTimeout(timerId.current)
-    }
-
-    timerId.current = setTimeout(() => handleSearch(query), 300)
   }
 
   const handlePlantSelect = (plant: PlantApiItem) => {

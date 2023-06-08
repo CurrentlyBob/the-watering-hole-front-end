@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { updatePlant } from '../../services/plantService'
-import { GardenPlant, PlantAttributes } from '../../types/models'
+import { GardenPlant } from '../../types/models'
 
 type UpdateFormProps = {
   plant: GardenPlant

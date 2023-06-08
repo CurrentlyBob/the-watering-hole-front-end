@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as tokenService from './tokenService'
 
-import { FormSubmitData, GardenPlant, PlantApiItem, PlantAttributes } from '../types/models'
+import { FormSubmitData, GardenPlant, PlantApiItem } from '../types/models'
 
 const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/garden`
