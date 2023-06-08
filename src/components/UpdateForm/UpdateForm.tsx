@@ -37,6 +37,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
   }, [plant])
 
   return (
+    <div className='relative'>
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border border-gray-300 rounded-md shadow-md">
       <h2 className="text-lg font-bold mb-4">Update Plant</h2>
       <div className="mb-4">
@@ -47,7 +48,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.common_name}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Scientific Name:</label>
@@ -67,7 +68,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.watering}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Sunlight:</label>
@@ -77,7 +78,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.sunlight}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Image:</label>
@@ -87,7 +88,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.default_image}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Plant Amount:</label>
@@ -97,7 +98,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.plantAmount}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Notes:</label>
@@ -106,7 +107,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.notes || ''}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="mb-4">
         <label className="block mb-1 font-semibold">Plant Location:</label>
@@ -116,7 +117,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
           value={updatedPlant.plantLocation || ''}
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-        />{' '}
+        />
       </div>
       <div className="flex justify-between">
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
@@ -127,6 +128,7 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
         </button>
       </div>
     </form>
+    </div>
   )
 }
 

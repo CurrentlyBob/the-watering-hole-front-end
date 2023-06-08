@@ -39,14 +39,14 @@ const GardenList = () => {
   }
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-4">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 p-4 pt-16 pb-12">
         <div>
           <h1 className="text-3xl mb-2">Your Garden</h1>
           {plants.length > 0 ? (
             <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-auto mb-5">
               {plants.map((plant) => (
-                <div key={plant.id} className="flex flex-col items-center bg-green-700 p-4 rounded-md">
-                  {editingPlantId === plant.id ? (
+                <div key={plant.id} className="flex flex-col items-center bg-green-700 p-4 rounded-md z-10">
+                {editingPlantId === plant.id ? (
                     <UpdateForm plant={plant} onCancel={() => setEditingPlantId(null)} onUpdate={fetchPlants} />
                   ) : (
                     <>
@@ -69,11 +69,11 @@ const GardenList = () => {
                         alt={`${plant.common_name}'s Image`}
                       />
                       <p>Scientific Name: {plant.scientific_name}</p>
-                      <p>Amount: {plant.plantAmount}</p>
-                      <p>Location: {plant.plantLocation}</p>
-                      <p>Sunlight: {plant.sunlight}</p>
                       <p>Watering: {plant.watering}</p>
+                      <p>Sunlight: {plant.sunlight}</p>
+                      <p>Amount: {plant.plantAmount}</p>
                       <p>Notes: {plant.notes}</p>
+                      <p>Location: {plant.plantLocation}</p>
                     </>
                   )}
                 </div>

@@ -45,7 +45,7 @@ const PlantList: React.FC = () => {
       </div>
       <div className="self-end mb-4 flex justify-center items-center">
         <button
-          className="btn mx-2 px-4 py-2 rounded bg-green-500 text-white"
+          className="btn mx-2 px-4 py-2 rounded bg-blue-500 text-white"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -53,7 +53,7 @@ const PlantList: React.FC = () => {
         </button>
         <span className="mx-2">{currentPage}</span>
         <button
-          className="btn mx-2 px-4 py-2 rounded bg-green-500 text-white"
+          className="btn mx-2 px-4 py-2 rounded bg-blue-500 text-white"
           onClick={() => handlePageChange(currentPage + 1)}
         >
           Next Page

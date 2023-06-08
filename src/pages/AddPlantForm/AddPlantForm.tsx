@@ -151,7 +151,7 @@ function AddPlantForm() {
         </div>
         <div className="grid grid-cols-2">
           <div className="m-4">
-            <label className="block text-gray-500 text-sm font-bold mb-2">Plant Nickname</label>
+            <label className="block text-gray-500 text-sm font-bold mb-2">Common name</label>
             <input
               type="text"
               name="nickname"
