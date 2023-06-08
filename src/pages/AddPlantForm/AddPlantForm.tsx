@@ -9,9 +9,9 @@ interface FormData {
   plantApiId: number
   nickname: string
   nicknameSearch: string
-  scientific?: string[]
+  scientific?: string
   watering: string
-  sunlight: string[]
+  sunlight: string
   image: string
   plantAmount: number
   notes: string | null
@@ -25,9 +25,9 @@ function AddPlantForm() {
     plantApiId: 0,
     nickname: '',
     nicknameSearch: '',
-    scientific: [],
+    scientific: '',
     watering: '',
-    sunlight: [],
+    sunlight: '',
     image: '',
     plantAmount: 0,
     notes: null,
@@ -61,9 +61,9 @@ function AddPlantForm() {
       ...formData,
       plantApiId: plant.id,
       nickname: plant.common_name,
-      scientific: plant.scientific_name,
+      scientific: plant.scientific_name[0] ?? '',
       watering: plant.watering,
-      sunlight: plant.sunlight,
+      sunlight: plant.sunlight[0] ?? '',
       image: plant.default_image.original_url,
       nicknameSearch: '',
     })
@@ -93,7 +93,7 @@ function AddPlantForm() {
         return {
           plantApiId: data.plantApiId,
           common_name: data.nickname,
-          scientific_name: data.scientific ?? [],
+          scientific_name: data.scientific ?? '',
           watering: data.watering,
           sunlight: data.sunlight,
           default_image: data.image,
@@ -112,9 +112,9 @@ function AddPlantForm() {
         plantApiId: 0,
         nickname: '',
         nicknameSearch: '',
-        scientific: [],
+        scientific: '',
         watering: '',
-        sunlight: [],
+        sunlight: '',
         image: '',
         plantAmount: 0,
         notes: null,
@@ -178,14 +178,8 @@ function AddPlantForm() {
               type="text"
               name="scientific"
               placeholder="Enter scientific name"
-              value={formData?.scientific?.join(', ') ?? ''}
-              onChange={(evt) => {
-                const values = evt.target.value.split(',').map((value) => value.trim())
-                setFormData((prevData) => ({
-                  ...prevData,
-                  scientific: values,
-                }))
-              }}
+              value={formData?.scientific ?? ''}
+              onChange={handleChange}
               className="w-full border border-gray-400 rounded py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:border-indigo-500"
             />
           </div>
@@ -208,14 +202,8 @@ function AddPlantForm() {
               type="text"
               name="sunlight"
               placeholder="Enter sunlight requirements"
-              value={formData.sunlight?.join(', ')}
-              onChange={(evt) => {
-                const values = evt.target.value.split(',').map((value) => value.trim())
-                setFormData((prevData) => ({
-                  ...prevData,
-                  sunlight: values,
-                }))
-              }}
+              value={formData.sunlight ?? ''}
+              onChange={handleChange}
               className="w-full border border-gray-400 rounded py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:border-indigo-500"
             />
           </div>

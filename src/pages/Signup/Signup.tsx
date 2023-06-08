@@ -141,7 +141,7 @@ const Signup = (props: AuthPageProps): JSX.Element => {
             className="bg-gray-700 text-white p-2 rounded w-2/3"
           />
         </div>
-        <div className="flex flex-col items-center items-center mt-4">
+        <div className="flex flex-col items-center mt-4">
           <Link to="/" className="text-green-500 hover:text-green-300">
             Cancel
           </Link>

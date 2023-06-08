@@ -1,15 +1,14 @@
 /* ---------===== custom models ====--------- */
 
-import { shouldProcessLinkClick } from 'react-router-dom/dist/dom'
 
 export interface PlantAttributes {
   id: number
   plantApiId: number
   nickname: string
-  scientific: string[]
+  scientific_name: string[]
   watering: string
   sunlight: string[]
-  image: string
+  default_image: string
   plantAmount: number
   notes?: string | null
   plantLocation?: string | null
@@ -19,8 +18,6 @@ export interface PlantAttributes {
   updatedAt: string
 }
 
-export type Sunlight = 'Full sun' | 'Part shade' | 'Sun-part_shade' | 'Full_shade'
-export type Watering = 'Frequent' | 'Average' | 'Minimum' | 'None'
 
 export interface PlantApiItem {
   common_name: string
@@ -38,8 +35,8 @@ export interface PlantApiItem {
   id: number
   other_name: unknown
   scientific_name: string[]
-  sunlight: Sunlight[]
-  watering: Watering
+  sunlight: string[]
+  watering: string
 }
 
 /* ---------===== auth models =====--------- */
@@ -64,9 +61,9 @@ export interface User {
 export interface FormSubmitData {
   plantApiId: number
   common_name: string
-  scientific_name: string[]
+  scientific_name: string
   watering: string
-  sunlight: string[]
+  sunlight: string
   default_image: string
   plantAmount: number
   notes: string
@@ -85,7 +82,7 @@ export interface GardenPlant {
   plantLocation: string
   profileId: number
   scientific_name: string[]
-  sunlight: Sunlight[]
+  sunlight: string
   updatedAt: string
-  watering: Watering
+  watering: string
 }
