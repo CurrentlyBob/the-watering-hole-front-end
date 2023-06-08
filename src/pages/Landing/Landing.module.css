@@ -7,6 +7,7 @@
   background-position: center center;
   background-size: cover;
   background-color: #000000;
+  height: 100vh;
 }
 
 .container > h1 {
@@ -22,11 +23,13 @@
   text-shadow: 2px 2px 0 var(--outline), 2px -2px 0 var(--outline), -2px 2px 0 var(--outline),
     -2px -2px 0 var(--outline), 2px 0px 0 var(--outline), 0px 2px 0 var(--outline), -2px 0px 0 var(--outline),
     0px -2px 0 var(--outline), 0px 3px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
 .container img {
   width: 320px;
   margin: 0px 0px 256px;
+  margin: 0;
 }
 
 .container button {
@@ -57,7 +60,4 @@ body {
   --border: rgb(220, 220, 220);
   --card-background: rgb(255, 255, 255);
 }
-._container_1nlmg_1 img {
-  width: 320px;
-  margin: 0 0 256px;
-}
+
