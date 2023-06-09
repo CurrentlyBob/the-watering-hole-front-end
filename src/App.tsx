@@ -43,7 +43,7 @@ function App(): JSX.Element {
         <NavBar user={user} handleLogout={handleLogout} />
         <div className="flex-grow overflow-auto">
           <Routes>
-            <Route path="/" element={<Landing user={user} />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/auth/signup" element={<Signup handleAuthEvt={handleAuthEvt} />} />
             <Route path="/auth/login" element={<Login handleAuthEvt={handleAuthEvt} />} />
             <Route path="/add-plant" element={<AddPlantForm />} />
