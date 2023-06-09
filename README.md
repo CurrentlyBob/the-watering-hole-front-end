@@ -28,6 +28,7 @@ The Watering Hole is a plant app designed to help plant enthusiasts track and ma
 
 # Attributions:
 - [Icons](https://fontawesome.com/icons)
+- [Plant API](https://perenual.com/)
 
 
 
