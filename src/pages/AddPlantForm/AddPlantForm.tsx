@@ -223,6 +223,7 @@ function AddPlantForm() {
             <label className="block text-gray-500 text-sm font-bold mb-2">Plant Location</label>
             <input
               type="text"
+              autoComplete='false'
               name="plantLocation"
               placeholder="Enter plant location"
               value={formData.plantLocation || ''}
