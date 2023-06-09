@@ -46,7 +46,7 @@ const GardenList = () => {
             <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-auto mb-5">
               {plants.map((plant) => (
                 <div key={plant.id} className="flex flex-col items-center bg-green-700 p-4 rounded-md z-10">
-                {editingPlantId === plant.id ? (
+                  {editingPlantId === plant.id ? (
                     <UpdateForm plant={plant} onCancel={() => setEditingPlantId(null)} onUpdate={fetchPlants} />
                   ) : (
                     <>

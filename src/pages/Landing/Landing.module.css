@@ -23,7 +23,7 @@
   text-shadow: 2px 2px 0 var(--outline), 2px -2px 0 var(--outline), -2px 2px 0 var(--outline),
     -2px -2px 0 var(--outline), 2px 0px 0 var(--outline), 0px 2px 0 var(--outline), -2px 0px 0 var(--outline),
     0px -2px 0 var(--outline), 0px 3px 5px rgba(0, 0, 0, 0.5);
-    margin: 0;
+  margin: 0;
 }
 
 .container img {
@@ -60,4 +60,3 @@ body {
   --border: rgb(220, 220, 220);
   --card-background: rgb(255, 255, 255);
 }
-

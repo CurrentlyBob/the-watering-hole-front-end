@@ -35,8 +35,6 @@ function AddPlantForm() {
     profileId: 0,
   })
 
-
-
   const handleSearch = async (query: string) => {
     try {
       const results = await searchPlants(query)

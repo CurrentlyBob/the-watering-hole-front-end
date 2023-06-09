@@ -5,32 +5,30 @@ The Watering Hole is a plant app designed to help plant enthusiasts track and ma
 
 ### [Launch The Watering Hole](https://main--the-watering-hole.netlify.app/)
 
-
 # Links 🔗
+
 - [Back-End Server](https://github.com/CurrentlyBob/the-watering-hole)
 - [Follow Me On Twitter](https://twitter.com/CurrentlyBog)
 
-
 ## Technologies Used:
-* TypeScript
-* React.js
-* Express.js
-* Node.js
-* Sequelize
-* PostgresSQL
-* JWT Authentication
-* Javascript
-* Tailwind CSS
-* Prettier
-* Netlify
-* Fly.io
 
+- TypeScript
+- React.js
+- Express.js
+- Node.js
+- Sequelize
+- PostgresSQL
+- JWT Authentication
+- Javascript
+- Tailwind CSS
+- Prettier
+- Netlify
+- Fly.io
 
 # Attributions:
+
 - [Icons](https://fontawesome.com/icons)
 - [Plant API](https://perenual.com/)
-
-
 
 ## Icebox Features🧊
 

@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 // services
 import * as authService from '../../services/authService'
 
-
 // types
 import { SignupFormData, PhotoFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
