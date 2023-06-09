@@ -60,14 +60,10 @@ function AddPlantForm() {
   }
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = evt.target
-    let newValue: string | boolean = value
-    if (type === 'checkbox') {
-      newValue = (evt.target as HTMLInputElement).defaultChecked
-    }
+    const { name, value } = evt.target
     setFormData((prevData) => ({
       ...prevData,
-      [name]: newValue,
+      [name]: value,
     }))
   }
 
