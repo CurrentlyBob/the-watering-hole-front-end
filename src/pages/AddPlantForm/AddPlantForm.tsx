@@ -94,7 +94,7 @@ function AddPlantForm() {
 
       const newData = transformFormData(formData)
       const res = await addPlant(newData)
-      console.log('Plant Created', res)
+      
 
       setFormData({
         plantApiId: 0,

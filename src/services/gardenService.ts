@@ -12,7 +12,6 @@ async function getGardenPlants(): Promise<GardenPlant[]> {
       method: 'GET',
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     })
-    console.log(res)
     const data = await res.json()
     return data
   } catch (error) {

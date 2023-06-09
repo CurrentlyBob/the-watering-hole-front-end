@@ -16,7 +16,6 @@ const UpdateForm = ({ plant, onCancel, onUpdate }: UpdateFormProps) => {
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault()
     try {
-      console.log('Updated Plant On Submit', updatedPlant)
       await updatePlant(updatedPlant)
       onUpdate()
       onCancel()
